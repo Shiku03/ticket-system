@@ -1,6 +1,6 @@
 <?php include("../partials/menu.php") ?>
 
-<a href="add-admin.php">
+<a href="add-event.php">
 <button class="add">Add Event</button>
 </a>
 
@@ -20,8 +20,13 @@
         <td>John</td>
         <td>1st June</td>
         <td colspan="2">
+            <a href="update-event.php">
             <button class="update">Update Event</button>
-        <button class="delete">Delete Event</button>
+            </a>
+            <a href="delete-event.php">
+            <button class="delete">Delete Event</button>
+            </a>
+
         </td>
     </tr>
 
@@ -31,8 +36,12 @@
         <td>Jane</td>
         <td>12th December</td>
         <td colspan="2">
-            <button class="update">Update Admin</button>
-        <button class="delete">Delete Admin</button>
+        <a href="update-event.php">
+            <button class="update">Update Event</button>
+            </a>
+            <a href="delete-event.php">
+            <button class="delete">Delete Event</button>
+            </a>
         </td>
     </tr>
 </tbody>
