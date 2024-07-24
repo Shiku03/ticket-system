@@ -3,6 +3,10 @@ body{
     padding:0;
     background-color:#AF8260;
 }
+a{
+    text-decoration:none;
+    color:inherit;
+}
 .navbar{
     margin:0;
     padding:20px;
@@ -47,6 +51,7 @@ text-transform: uppercase;
 
 .dash-item:hover{
     color:#E4C59E;
+    cursor: pointer;
 }
 
 .dash-item h2{
@@ -58,10 +63,105 @@ text-transform: uppercase;
     font-size: 2rem;
     text-align: center;
 }
+
+button{
+    margin:10px;
+    padding:10px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    border-style: none;
+    text-transform: uppercase;
+    cursor:pointer;
+}
+
+button.add{
+    background-color: #739ac2;
+}
+button.add:hover{
+    background-color:#87b5e2 ;
+   
+}
+button.update{
+    background-color: #36b495;
+}
+button.update:hover{
+    background-color: #33c7a2;
+}
+button.update:active{
+    background-color: #37d6af;
+}
+button.delete{
+    background-color: #FF204E;
+}
+button.delete:hover{
+    background-color: #fa4e71;
+}
+button.delete:active{
+    background-color: #fd6382;
+}
+button.submit{
+    background-color: #79AC78;
+}
+button.submit:hover{
+    background-color: #85bd84;
+}
+button.submit:active{
+    background-color: #90cc8f;
+}
+
+table{
+    width:100%;
+    padding:40px;
+    border-collapse: collapse;
+}
+tbody{
+    border-spacing: 0;
+}
+
+th{
+    text-align: left;
+    padding:12px;
+   
+}
+td{
+    padding:12px;
+    
+}
+tr:nth-child(even){
+    background-color: #AF8F6F;
+}
+
+#admin-form{
+    margin:40px;
+    padding:20px;
+
+}
+#admin-form div{
+    margin:20px 0;
+    padding:10px 0;
+    display: flex;
+    
+}
+
+#admin-form label{
+   width:8vw;
+}
+
+#admin-form input,select{
+    max-width:60%;
+    flex-grow: 1;
+    font-size: 16px;
+    padding:4px;
+    font-family: Raleway;
+    border-radius: 8px;
+    border-style: none;
+ }
+
+
 footer{
     width:100%;
     padding:12px 0 ;
     text-align: center;
-   
+    
     background-color: #803D3B;
 }

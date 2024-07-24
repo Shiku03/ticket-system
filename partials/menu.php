@@ -19,7 +19,9 @@
    <div class="navbar">
     <ul>
         <a href="../index.php"><li>Home</li></a>
-        <a href="admin/admin.php"><li>Admin</li></a>
+        <a href="../admin/admin.php"><li>Admin</li></a>
+        <a href="../events/events.php"><li>Events</li>
+        </a>
         <a href=""><li>Sales</li></a>
 
     </ul>
