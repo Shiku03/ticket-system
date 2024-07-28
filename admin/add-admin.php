@@ -1,27 +1,5 @@
 <?php 
 include("../partials/menu.php");
-
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $fullname= $_POST['fullname'];
-    $username = $_POST['username'];
-    $role = $_POST['role'];
-    $pass = $_POST['password'];
-
-    if(!empty($fullname)&&!empty($username)&&!empty($role)  &&!empty($pass)){
-         $query= "INSERT INTO admin(full_name, username, role, password) VALUES($fullname, $username, $role, $pass);";
-
-         mysqli_query($conn, $query);
-
-         echo "Admin Added Successfully ";
-
-         header:"Location: admin.php";
-
-    }  else {
-        echo "Please fill in all the fields!";
-    }
-}
-
-
 ?>
 
 <form action="" method="post" id="admin-form">
@@ -42,9 +20,49 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <input type="password" name="password" id="password">
     </div>
     <div>
-    <button class="submit">Add Admin</button>
+   <input type="submit" name="submit" value="Add Admin">
     </div>
     
 </form>
 
 <?php include("../partials/footer.php") ?>
+
+<?php
+
+if(isset($_POST['submit'])){
+   // echo "Button clicked";
+   //pass data from form to db
+   $fullname= $_POST['fullname'];
+   $username = $_POST['username'];
+   $role = $_POST['role'];
+   $pass =  md5($_POST['password']);
+
+   //escape user input to prevent sql injection
+   /*
+   $fullname = $conn->real_escape_string($fullname);
+   $username = $conn->real_escape_string($username);
+   $role = $conn->real_escape_string($role);
+   $pass = $conn->real_escape_string($pass);
+
+*/
+   //create query
+   
+   $sql="INSERT INTO admin(full_name, username, role , password) VALUES ('$fullname', '$username', '$role', '$pass')";
+   //execute query and save data into db
+   $result = $conn->query($sql);
+   
+  //$stmt = $conn->prepare("INSERT INTO admin (full_name, username, role, password) VALUES (?, ?, ?, ?)");
+  //$stmt->bind_param("ssss", $fullname, $username, $role, $pass);
+   //check if query was successful
+   if($result){
+    //if($stmt->execute()){
+    //echo "success";
+    header("location:" . $siteurl. "admin.php");
+   }else{
+    echo "failed to add data". $sql . $conn->error;
+   }
+   
+} 
+
+
+?>

@@ -12,38 +12,45 @@
         <th>Full Name</th>
         <th>Username</th>
         <th>Role</th>
-        <th>Time Reported</th>
         <th >Action</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>Nikita Wanjiku</td>
-        <td>shiku03</td>
-        <td>Manager</td>
-        <td>10.00am</td>
-        <td colspan="2">
-            <a href="update-admin.php">
-            <button class="update">Update Admin</button>
-            </a>
-           <a href="delete-admin.php">
-           <button class="delete">Delete Admin</button>
-           </a>
-       
-        </td>
-        
-    </tr>
 
-    <tr >
-        <td>2</td>
-        <td>Nikita Wanjiku</td>
-        <td>shiku03</td>
-        <td>Employee</td>
-        <td>7.48am</td>
-        <td colspan="2">
-            <button class="update">Update Admin</button>
-        <button class="delete">Delete Admin</button>
-        </td>
-    </tr>
+    <?php
+    
+$sql= "SELECT * FROM admin;";
+$idn = 1;
+$result =$conn->query($sql);
+if($result){
+    if($result->num_rows>0){
+        while($rows= $result->fetch_assoc()){
+            $id= $rows['id'];
+            $fullname=$rows['full_name'];
+            $username=$rows['username'];
+            $role=$rows['role'];
+?>
+            <tr>
+            <td><?php echo $idn++; ?></td>
+            <td><?php echo $fullname; ?></td>
+            <td><?php echo $username; ?></td>
+            <td><?php echo $role; ?></td>
+            <td colspan="2">
+                <a href="update-admin.php?id=<?php echo $id ?>">
+                <button class="update">Update Admin</button>
+                </a>
+               <a href="<?php echo $siteurl; ?>delete-admin.php?id=<?php echo $id ?>">
+               <button class="delete">Delete Admin</button>
+               </a>
+           
+            </td>
+        </tr>
+
+        <?php
+
+        }
+    }
+}
+
+    ?>
 </tbody>
 </table>
 
