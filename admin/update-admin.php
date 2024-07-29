@@ -23,7 +23,7 @@ if($result){
 }
 ?>
 
-<form action="" method="post" id="admin-form">
+<form action="" method="post" id="admin-form" class="input-form">
    <div>
    <label for="fullname">Full Name:</label>
    <input type="text" placeholder="Jane" name="fullname" id="fullname" value="<?php echo $fullname?>">
@@ -54,9 +54,13 @@ if(isset($_POST['submit'])){
    $result = $conn->query($sql);
 
    if($result){
-    echo "Admin updated successfully";
+   // echo "Admin updated successfully";
+   header("location:" . $siteurl. "admin.php");
+   $_SESSION['update']="Updated admin successfully";
    } else{
-    echo "Failed to update admin";
+    //echo "Failed to update admin";
+    header("location:" . $siteurl. "admin.php");
+    $_SESSION['update']="Updated admin successfully";
    }
 }
 

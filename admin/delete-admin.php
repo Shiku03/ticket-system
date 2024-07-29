@@ -14,10 +14,13 @@
     //check if query was successful
     if($result){
      //if($stmt->execute()){
-     echo "successfully deleted";
-     //header("location:" . $siteurl. "admin.php");
-    }else{
-     echo "failed to add data". $sql . $conn->error;
+     //echo "successfully deleted";
+     header("location:" . $siteurl. "admin.php");
+     $_SESSION['delete']= "Admin successfully deleted";
+
+    }else  {
+        header("location:" . $siteurl. "admin.php");
+        $_SESSION['delete']= "Failed to successfully delete admin";
     }
     
  

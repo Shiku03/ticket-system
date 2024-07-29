@@ -131,23 +131,23 @@ tr:nth-child(even){
     background-color: #AF8F6F;
 }
 
-#admin-form{
+#form{
     margin:40px;
     padding:20px;
 
 }
-#admin-form div{
+#form div{
     margin:20px 0;
     padding:10px 0;
     display: flex;
     
 }
 
-#admin-form label{
+#form label{
    width:8vw;
 }
 
-#admin-form input,select{
+#form input,select{
     max-width:60%;
     flex-grow: 1;
     font-size: 16px;
@@ -157,6 +157,29 @@ tr:nth-child(even){
     border-style: none;
  }
 
+input.submit{
+color:rgb(192, 192, 192);
+background-color: #68342a;
+width:300px;
+ }
+
+ input.submit:hover{
+    color: rgb(226, 225, 225);
+ }
+ input.submit:active{
+    color: rgb(255, 255, 225);
+    background-color: #814134;
+
+ }
+
+ table.extra-table{
+    margin-top:50px;
+ }
+
+ .extra-table th, .extra-table td {
+    text-align: center;
+    font-size: 1.3rem;
+ }
 
 footer{
     width:100%;

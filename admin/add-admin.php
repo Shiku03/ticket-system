@@ -2,25 +2,25 @@
 include("../partials/menu.php");
 ?>
 
-<form action="" method="post" id="admin-form">
+<form action="" method="post" id="form">
    <div>
    <label for="fullname">Full Name:</label>
-   <input type="text" placeholder="Jane" name="fullname" id="fullname">
+   <input type="text" placeholder="Jane" name="fullname" id="fullname" required>
    </div>
 <div>
 <label for="username">Username:</label>
-<input type="text" placeholder="Wambui" name="username" id="username">
+<input type="text" placeholder="Wambui" name="username" id="username" required>
 </div>
     <div>
     <label for="role">Role:</label>
-    <input type="text" placeholder="Employee" name="role" id="role">
+    <input type="text" placeholder="Employee" name="role" id="role" required>
     </div>
     <div>
     <label for="password">Password:</label>
-    <input type="password" name="password" id="password">
+    <input type="password" name="password" id="password" required>
     </div>
     <div>
-   <input type="submit" name="submit" value="Add Admin">
+   <input type="submit" class="submit" name="submit" value="Add Admin">
     </div>
     
 </form>
@@ -50,16 +50,16 @@ if(isset($_POST['submit'])){
    $sql="INSERT INTO admin(full_name, username, role , password) VALUES ('$fullname', '$username', '$role', '$pass')";
    //execute query and save data into db
    $result = $conn->query($sql);
-   
-  //$stmt = $conn->prepare("INSERT INTO admin (full_name, username, role, password) VALUES (?, ?, ?, ?)");
-  //$stmt->bind_param("ssss", $fullname, $username, $role, $pass);
    //check if query was successful
    if($result){
-    //if($stmt->execute()){
+    
     //echo "success";
     header("location:" . $siteurl. "admin.php");
+    $_SESSION['add']="Added admin successfully";
    }else{
-    echo "failed to add data". $sql . $conn->error;
+    //echo "failed to add data". $sql . $conn->error;
+    header("location:" . $siteurl. "admin.php");
+    $_SESSION['add']="Failed to add admin";
    }
    
 } 
