@@ -16,7 +16,7 @@
     </tr>
 
     <?php
-    
+    $siteurl="http://localhost:3000/admin/";
 $sql= "SELECT * FROM admin;";
 $idn = 1;
 $result =$conn->query($sql);
@@ -34,7 +34,7 @@ if($result){
             <td><?php echo $username; ?></td>
             <td><?php echo $role; ?></td>
             <td colspan="2">
-                <a href="update-admin.php?id=<?php echo $id ?>">
+                <a href="<?php echo $siteurl; ?>update-admin.php?id=<?php echo $id ?>">
                 <button class="update">Update Admin</button>
                 </a>
                <a href="<?php echo $siteurl; ?>delete-admin.php?id=<?php echo $id ?>">
