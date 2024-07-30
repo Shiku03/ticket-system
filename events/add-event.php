@@ -20,6 +20,7 @@
     
 </form>
 
+
 <?php
 if(isset($_POST['submit'])){
     //pass form values to variables
@@ -28,9 +29,13 @@ if(isset($_POST['submit'])){
     $host = $_POST['host'];
 
 //create query
+
 $sql="INSERT INTO events(event_name, event_date, host) VALUES('$name', '$date' , '$host');";
+
 //execute query
-$result=$conn->query($sql);
+$result = $conn->query($sql);
+
+
 if($result){
     //echo "New Record created successfully";
     header("location:". $siteurl . "events.php");
@@ -38,8 +43,9 @@ if($result){
 } else {
    // echo "Failed to make new record";
    header("location:" .$siteurl. "events.php");
-   $_SESSION['add']= "Event added successfully";
+   $_SESSION['add']= "Failed to add event successfully";
 }
+   
 
 } 
 ?>

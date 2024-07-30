@@ -41,7 +41,7 @@ if($conn -> connect_error){
         <a href="../admin/admin.php"><li>Admin</li></a>
         <a href="../events/events.php"><li>Events</li>
         </a>
-        <a href="../sales/sales.php"><li>Sales</li></a>
+        <a href="../tickets/ticket-sales.php"><li>Sales</li></a>
 
     </ul>
    </div>
