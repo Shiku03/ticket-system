@@ -64,22 +64,6 @@
             console.log('Generated Random String:', randomString);
 
             // Send the random string to the server
-            fetch('save_data.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: new URLSearchParams({
-                    'random_data': randomString
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Server Response:', data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
         });
     </script>
 </body>
