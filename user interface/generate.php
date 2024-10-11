@@ -9,9 +9,19 @@
     
 </head>
 <body>
-    <div class="generator">
+    <div class="generator-container">
 
-    <button id="generate-button">Generate and Save Data</button>
+    <div class="generator">
+    <button id="generate-button">Generate Ticket Number</button> <br> <br>
+
+    <div><p>Your ticket number is <br> <br> <br> <b style="font-size:28px"> 2568 </div>
+
+        <?php
+        # echo $ticket
+        ?>
+    </b></p>
+    </div>
+   
     
     </div>
    

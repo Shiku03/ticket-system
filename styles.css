@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding:0;
-    background-color:#AF8260;
+    position:relative;
 }
 a{
     text-decoration:none;
@@ -72,6 +72,7 @@ button{
     border-style: none;
     text-transform: uppercase;
     cursor:pointer;
+    
 }
 
 button.add{
@@ -187,4 +188,20 @@ footer{
     text-align: center;
     
     background-color: #803D3B;
+}
+.generator-container{
+    width:500px;
+    height:300px;
+    border:1px solid rgb(29, 29, 29);
+    border-radius:20px;
+    box-shadow: 16px -12px 4px rgb(179, 179, 179);
+    padding:30px;
+    position:absolute;
+    top:100px;
+    left:400px;
+    display:inline-flex;
+    justify-content:center;
+}
+#generate-button{
+    margin-top:40px;
 }
